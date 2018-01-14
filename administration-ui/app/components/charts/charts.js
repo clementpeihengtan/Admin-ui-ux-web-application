@@ -9,8 +9,7 @@
             templateUrl: 'components/charts/charts.html',
         });
     });
-    chart.controller('allshares', function($scope){
-        $scope.shares = [
+    var datalist = [
         {
             "name" : "Node 1",
             "mark" : 80,
@@ -24,18 +23,29 @@
             "capacity" : 80
         },
         {
-            "name" : "Node 1",
+            "name" : "Node 4",
             "mark" : 60,
             "average" : 9,
             "capacity" : 20
         },
         {
-            "name" : "Node 1",
+            "name" : "Node 5",
             "mark" : 20,
             "average" : 5,
             "capacity" : 30
         }
-        ]
+        ];
+
+    chart.factory('Data', function() {
+        var Data = {};
+
+        Data.all = function() {
+            return datalist;
+        }
+        return Data
+    })
+    chart.controller('allshares', function($scope){
+        $scope.shares = datalist;
     });
 })();
 
