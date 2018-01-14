@@ -1,0 +1,74 @@
+<h2 class="title">Charts</h2>
+<div classs="row bottom-margin" style="margin-left: -30px;">
+    <div class="row-lg-10">
+        <div class="col-md-6 bottom-margin">
+            <div class="col-md-12 bottom-margin">
+                <div class="small-chart">
+                    <div class="tab-title">
+                        All Shares
+                    </div>
+                    <br>
+                    <div class="row-md-5" ng-controller="allshares" style="margin-left: -12px;">
+                        <div class="col-sm-4 bottom-margin" ng-repeat="x in shares" style="border-right: 1px solid #eee">
+                            <span class="separator">{{x.name}}</span><br>
+                            <div class="row" style="margin-top: 5px">
+                                <div class="col-sm-2 more-separate">
+                                    <span class="separator" style="color: green">{{x.mark}}</span><br>
+                                    <span class="separator" style="font-weight: 300">Mark</span>
+                                </div>
+                                <div class="col-sm-2 separator">
+                                    <span class="separator" style="color: red">{{x.average}}</span><br>
+                                    <span class="separator" style="font-weight: 300">Average</span><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 bottom-margin">
+                <div class="small-chart">
+                    <div class="tab-title">
+                        Recent Shares
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 bottom-margin">
+                <div class="small-chart">
+                    <div class="tab-title">
+                        Shares Information
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 bottom-margin">
+             <div class="large-chart">
+                <div class="tab-title">
+                    Infrastructure
+                </div>
+                <hr class="line">
+                <span class="separator">Most</span><br>
+                <div class="row" style="margin-top: 5px">
+                    <div class="col-sm-2 more-separate">
+                        <span class="separator" style="color: blue">90</span><br>
+                        <span class="separator" style="font-weight: 300">Mark</span>
+                    </div>
+                    <div class="col-sm-2 more-separate">
+                        <span class="separator" style="color: red">40</span><br>
+                        <span class="separator" style="font-weight: 300">Average</span><br>
+                    </div>
+                    <div class="col-sm-2 separator">
+                        <span class="separator" style="color: green">20</span><br>
+                        <span class="separator" style="font-weight: 300">Average</span><br>
+                    </div>
+                </div>
+                <br>
+                <hr class="line">
+                <div style="height: 300px; width: 100%">
+                    <div id="myparent">
+                        <canvas id="mychart"></canvas>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<html lang='en'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <base href="/">
+
+  <title></title>
+  <!--bootstrap and our app css file-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="app.css">
+
+  <!--angular and ui-router-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!--our angular app-->
+  <script src="components/overview/overview.js"></script>
+  <script src="components/charts/charts.js"></script>
+  <script src="components/dashboard/dashboard.js"></script>
+  <script src="components/storage/storage.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="admin">
+  <nav class="navbar-deco navbar navbar-default" id="my-nav">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">Administration</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="users">Home</a></li>
+        <li><a ui-sref="about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="mycontainer">
+    <div class="side-bar minimised">
+      <a class="nav-list main-nav" onclick="$('.side-bar').toggleClass('minimised');">
+        <div class="nav-icon">
+          <i class="fa fa-angle-double-right closed"></i>
+          <i class="fa fa-angle-double-left opened"></i>
+        </div>
+        <a class="nav-list active" ui-sref="overview">
+          <div class="nav-icon">
+            <i class="fa fa-dashboard"></i>
+          </div>
+          <div class="nav-title">Overview</div>
+        </a>
+        <a class="nav-list" ui-sref="dashboard">
+          <div class="nav-icon">
+            <i class="fa fa-th-large"></i>
+          </div>
+          <div class="nav-title">Dashboard</div>
+        </a>
+        <a class="nav-list" ui-sref="storage">
+          <div class="nav-icon">
+            <i class="fa fa-database"></i>
+          </div>
+          <div class="nav-title">Storage</div>
+        </a>
+        <a class="nav-list" ui-sref="charts">
+          <div class="nav-icon">
+            <i class="fa fa-bar-chart"></i>
+          </div>
+          <div class="nav-title">Charts</div>
+        </a>
+      </a>
+    </div>
+    <div class="container" id="main-content" ui-view></div>
+  </div>
+</body>
+</html>
